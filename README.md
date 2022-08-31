@@ -34,3 +34,11 @@ See [Solution on JetBrains](https://youtrack.jetbrains.com/issue/WEB-52736).
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Components calls
+```
+<MainNav />
+<MainNav></MainNav>
+<main-nav></main-nav>
+<main-nav />
+```
