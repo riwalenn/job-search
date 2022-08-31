@@ -26,5 +26,11 @@ npm run lint
 npm run lint --fix 
 ```
 
+### TailwindCss Plugin
+```
+Preview of the resulting CSS for classes on hover : ctrl + Q on Windows or F1 on Mac
+```
+See [Solution on JetBrains](https://youtrack.jetbrains.com/issue/WEB-52736).
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

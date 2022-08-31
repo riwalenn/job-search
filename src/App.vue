@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello, I am in App.vue</h1>
+  <h1 class="mt-8">Hello, I am in App.vue</h1>
 </template>
 
 <script>
