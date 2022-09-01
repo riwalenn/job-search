@@ -12,22 +12,14 @@
             <li class="h-full">
               <a href="" class="flex items-center h-full py-2.5">Teams</a>
             </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5">Locations</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5"
-                >Life at Cat Corp
+            <li
+              v-for="menuItem in menuItems"
+              :key="menuItem"
+              class="h-full ml-9"
+            >
+              <a href="" class="flex items-center h-full py-2.5">
+                {{ menuItem }}
               </a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5">How we hire</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5">Students</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5">Jobs</a>
             </li>
           </ul>
         </nav>
@@ -42,6 +34,13 @@ export default {
     return {
       company: "Cat Careers",
       url: "https://careers.google.com",
+      menuItems: [
+        "Teams",
+        "Locations",
+        "Life at Cat Corp",
+        "How we hire",
+        "Students",
+      ],
     };
   },
 };
