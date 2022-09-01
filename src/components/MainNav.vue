@@ -4,7 +4,9 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a v-bind:href="url" class="flex items-center h-full text-xl">{{ company }}</a>
+        <a :href="url" class="flex items-center h-full text-xl">
+          {{ company }}
+        </a>
       </div>
     </div>
   </header>
