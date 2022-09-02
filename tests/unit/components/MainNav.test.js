@@ -25,7 +25,7 @@ describe("MainNav", () => {
   });
 
   describe("when user is logged out", () => {
-    it('prompts user to sign in', function () {
+    it("prompts user to sign in", function () {
       const wrapper = mount(MainNav, {
         data() {
           return {
@@ -34,13 +34,8 @@ describe("MainNav", () => {
         },
       });
 
-      const loginButton = wrapper.findComponent({
-        name: "ActionButton",
-      });
-
-      const profileImage = wrapper.findComponent({
-        name: "ProfileImage",
-      });
+      const loginButton = wrapper.find("[data-test='login-button']");
+      const profileImage = wrapper.find("[data-test='profile-image']");
 
       expect(loginButton.exists()).toBe(true);
       expect(profileImage.exists()).toBe(false);
@@ -48,7 +43,7 @@ describe("MainNav", () => {
   });
 
   describe("when user logs in", () => {
-    it('displays user profile picture', function () {
+    it("displays user profile picture", function () {
       const wrapper = mount(MainNav, {
         data() {
           return {
@@ -57,13 +52,8 @@ describe("MainNav", () => {
         },
       });
 
-      const loginButton = wrapper.findComponent({
-        name: "ActionButton",
-      });
-
-      const profileImage = wrapper.findComponent({
-        name: "ProfileImage",
-      });
+      const loginButton = wrapper.find("[data-test='login-button']");
+      const profileImage = wrapper.find("[data-test='profile-image']");
 
       expect(loginButton.exists()).toBe(false);
       expect(profileImage.exists()).toBe(true);
