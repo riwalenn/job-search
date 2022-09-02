@@ -1,13 +1,21 @@
 <template>
-  <button
-    class="px-5 py-3 font-medium text-white border-0 rounded bg-brand-blue-1 hover:bg-brand-blue-light-1"
-  >
-    S'enregistrer
+  <button class="primary">
+    {{ text }}
   </button>
 </template>
 
 <script>
 export default {
   name: "ActionButton",
+  props: ["text"],
 };
 </script>
+<style scoped>
+button {
+  @apply px-5 py-3 rounded font-medium;
+}
+
+.primary {
+  @apply text-white bg-brand-blue-1 hover:bg-brand-blue-light-1;
+}
+</style>
