@@ -16,12 +16,11 @@ describe("MainNav", () => {
     const navigationMenuTexts = navigationMenuItems.map((item) => item.text());
 
     expect(navigationMenuTexts).toEqual([
-      "Teams",
-      "Locations",
-      "Life at Cat Corp",
-      "How we hire",
-      "Students",
-      "Jobs",
+      "Qui sommes-nous ?",
+      "Localisations",
+      "Nous rejoindre",
+      "Etudiants",
+      "Emplois",
     ]);
   });
 });
