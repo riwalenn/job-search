@@ -25,24 +25,27 @@
           <profile-image v-if="isLoggedIn" data-test="profile-image" />
           <action-button
             v-else
-            text="S'enregistrer"
+            text="Se connecter"
             data-test="login-button"
             @click="loginUser"
           />
         </div>
       </div>
+      <subnav v-if="isLoggedIn" data-test="subnav" />
     </div>
   </header>
 </template>
 <script>
 import ActionButton from "@/components/ActionButton";
 import ProfileImage from "@/components/ProfileImage";
+import Subnav from "@/components/Subnav";
 
 export default {
   name: "MainNav",
   components: {
     ActionButton,
     ProfileImage,
+    Subnav,
   },
   data() {
     return {

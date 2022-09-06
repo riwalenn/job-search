@@ -1,6 +1,6 @@
 const favoriteFood = "sushi";
 const goodFoods = {
-    [favoriteFood]: true,
+  [favoriteFood]: true,
 };
 
 console.log(goodFoods);
