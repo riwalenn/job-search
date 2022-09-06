@@ -5,7 +5,7 @@ import MainNav from "@/components/MainNav";
 describe("MainNav", () => {
   it("displays company name", function () {
     const wrapper = mount(MainNav);
-    expect(wrapper.text()).toMatch("Cat Careers");
+    expect(wrapper.text()).toMatch("Careers");
   });
 
   it("displays menu items for navigation", function () {
