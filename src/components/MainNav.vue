@@ -26,6 +26,7 @@
           <action-button
             v-else
             text="S'enregistrer"
+            type="primary"
             data-test="login-button"
             @click="loginUser"
           />
