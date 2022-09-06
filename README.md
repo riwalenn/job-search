@@ -42,3 +42,19 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 <main-nav></main-nav>
 <main-nav />
 ```
+
+### Notes
+```
+beforeCreate() {
+    console.log("component is about to be created");
+  },
+  created() {
+    console.log("component has been created");
+  },
+  beforeMount() {
+    console.log("component is about to be mounted");
+  },
+  mounted() {
+    console.log("component has been mounted in the DOM");
+  },
+```
