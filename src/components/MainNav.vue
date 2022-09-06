@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      company: "Cat Careers",
+      company: "Careers",
       url: "https://cat-careers.riwalennbas.com",
       menuItems: [
         "Qui sommes-nous ?",

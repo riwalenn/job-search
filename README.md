@@ -1,4 +1,4 @@
-# cat-careers
+# careers
 
 ## Project setup
 ```
