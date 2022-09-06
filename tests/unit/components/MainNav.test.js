@@ -45,7 +45,7 @@ describe("MainNav", () => {
       expect(profileImage.exists()).toBe(true);
     });
 
-    it('displays subnav with additional information', async function () {
+    it("displays subnav with additional information", async function () {
       const wrapper = shallowMount(MainNav);
       let subnav = wrapper.find("[data-test='subnav']");
 
