@@ -8,6 +8,7 @@
         <label class="absolute left-0 -top-10">Profession</label>
         <input
           type="text"
+          :value="profession"
           placeholder="Développeur Frontend"
           class="w-full text-lg font-normal focus:outline-none"
         />
@@ -20,6 +21,7 @@
         <label class="absolute left-0 -top-10">Où ?</label>
         <input
           type="text"
+          :value="lieu"
           placeholder="Toulouse"
           class="w-full text-lg font-normal focus:outline-none"
         />
@@ -35,6 +37,12 @@ export default {
   name: "JobSearchForm",
   components: {
     ActionButton,
+  },
+  data() {
+    return {
+      profession: "",
+      lieu: "",
+    };
   },
 };
 </script>
