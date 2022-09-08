@@ -11,6 +11,7 @@
           :value="profession"
           placeholder="Développeur Frontend"
           class="w-full text-lg font-normal focus:outline-none"
+          @input="updateRole"
         />
       </div>
       <span
@@ -24,6 +25,7 @@
           :value="lieu"
           placeholder="Toulouse"
           class="w-full text-lg font-normal focus:outline-none"
+          @input="updateLocation"
         />
       </div>
     </div>
@@ -43,6 +45,14 @@ export default {
       profession: "",
       lieu: "",
     };
+  },
+  methods: {
+    updateRole($event) {
+      this.profession = $event.target.value;
+    },
+    updateLocation($event) {
+      this.lieu = $event.target.value;
+    },
   },
 };
 </script>
