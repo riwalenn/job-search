@@ -6,7 +6,10 @@
     <div class="flex flex-nowrap flex-1 h-full text-base font-light">
       <div class="relative flex items-center flex-1 h-full pr-3">
         <label class="absolute left-0 -top-10">Profession</label>
-        <text-input placeholder="Développeur Frontend" />
+        <text-input
+          placeholder="Développeur Frontend"
+          @handle-input="profession = $event"
+        />
       </div>
       <span
         class="flex items-center h-full px-3 border-x border-brand-gray-3 bg-brand-gray-2"
@@ -14,7 +17,7 @@
       >
       <div class="relative flex items-center flex-1 h-full pl-3">
         <label class="absolute left-0 -top-10">Où ?</label>
-        <text-input placeholder="Toulouse" />
+        <text-input placeholder="Toulouse" @handle-input="lieu = $event" />
       </div>
     </div>
     <action-button text="Rechercher" type="secondary" class="rounded-r-3xl" />
