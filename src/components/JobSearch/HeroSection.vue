@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Headline from "@/components/Headline";
-import JobSearchForm from "@/components/JobSearchForm";
+import Headline from "@/components/JobSearch/Headline";
+import JobSearchForm from "@/components/JobSearch/JobSearchForm";
 
 export default {
   name: "HeroSection",
