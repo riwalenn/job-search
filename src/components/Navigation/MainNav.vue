@@ -37,8 +37,8 @@
 </template>
 <script>
 import ActionButton from "@/components/ActionButton";
-import ProfileImage from "@/components/ProfileImage";
-import Subnav from "@/components/Subnav";
+import ProfileImage from "@/components/Navigation/ProfileImage";
+import Subnav from "@/components/Navigation/Subnav";
 
 export default {
   name: "MainNav",

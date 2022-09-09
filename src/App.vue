@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MainNav from "@/components/MainNav";
+import MainNav from "@/components/Navigation/MainNav";
 import HeroSection from "@/components/HeroSection";
 
 export default {
