@@ -6,12 +6,7 @@
     <div class="flex flex-nowrap flex-1 h-full text-base font-light">
       <div class="relative flex items-center flex-1 h-full pr-3">
         <label class="absolute left-0 -top-10">Profession</label>
-        <input
-          v-model="profession"
-          type="text"
-          placeholder="Développeur Frontend"
-          class="w-full text-lg font-normal focus:outline-none"
-        />
+        <text-input placeholder="Développeur Frontend" />
       </div>
       <span
         class="flex items-center h-full px-3 border-x border-brand-gray-3 bg-brand-gray-2"
@@ -19,12 +14,7 @@
       >
       <div class="relative flex items-center flex-1 h-full pl-3">
         <label class="absolute left-0 -top-10">Où ?</label>
-        <input
-          v-model="lieu"
-          type="text"
-          placeholder="Toulouse"
-          class="w-full text-lg font-normal focus:outline-none"
-        />
+        <text-input placeholder="Toulouse" />
       </div>
     </div>
     <action-button text="Rechercher" type="secondary" class="rounded-r-3xl" />
@@ -33,10 +23,13 @@
 
 <script>
 import ActionButton from "@/components/Shared/ActionButton";
+import TextInput from "@/components/Shared/TextInput";
+
 export default {
   name: "JobSearchForm",
   components: {
     ActionButton,
+    TextInput,
   },
   data() {
     return {
