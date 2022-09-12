@@ -52,7 +52,6 @@ export default {
   },
   data() {
     return {
-      company: "Careers",
       menuItems: [
         "Qui sommes-nous ?",
         "Localisations",
