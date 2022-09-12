@@ -1,24 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import routes from "./routes";
 
-import HomeView from "@/views/HomeView";
-import JobResultsView from "@/views/JobResultsView";
-
-const routes = [
-  {
-    path: "/home",
-    name: "Home",
-    component: HomeView,
-  },
-  {
-    path: "/jobs/results",
-    name: "JobResults",
-    component: JobResultsView,
-  },
-];
-
-const router = createRouter({
+const Router = new createRouter({
   history: createWebHashHistory(),
   routes,
 });
 
-export default router;
+export default Router;
