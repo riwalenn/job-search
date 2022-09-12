@@ -7,7 +7,12 @@
           <headline />
           <job-search-form />
         </div>
-        <div class="col-start-7 col-span-5">image</div>
+        <div class="col-start-7 col-span-5">
+          <img
+            src="https://careers.google.com/jobs/dist/img/assets/hero-03_1x.085e94af78d9906f55c83d558eca4453.png"
+            alt=""
+          />
+        </div>
         <div class="col-start-12 col-span-1"></div>
       </div>
     </section>
