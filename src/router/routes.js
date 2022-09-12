@@ -7,12 +7,13 @@ const routes = [
   {
     path: "/jobs/results/:id",
     name: "ListeEmplois",
-    component: () => import("@/views/JobView"),
+    component: () => import(/* webpackChunkName: "jobs" */ "@/views/JobView"),
   },
   {
     path: "/jobs/results",
     name: "Resultats",
-    component: () => import("@/views/JobResultsView"),
+    component: () =>
+      import(/* webpackChunkName: "jobs" */ "@/views/JobResultsView"),
   },
 ];
 
