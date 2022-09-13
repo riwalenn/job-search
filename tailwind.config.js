@@ -17,6 +17,9 @@ module.exports = {
         "brand-blue-light-1": "rgba(25,103,210,0.91)",
         "brand-green-1": "#137333",
       },
+      boxShadow: {
+        gray: "0 1px 3px 0 rgba(60, 64, 67, .3)",
+      },
       margin: {
         15: "3.75rem",
       },
