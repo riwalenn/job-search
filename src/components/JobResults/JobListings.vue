@@ -10,7 +10,23 @@
     </ol>
     <div class="mt-8 mx-auto">
       <div class="flex flex-row flex-nowrap">
-        <p class="text-sm flex-grow">Page {{ currentPage }}</p>
+        <p class="text-sm flex-grow">
+          Page {{ currentPage }} sur {{ totalPage }}
+        </p>
+        <div class="flex items-center justify-center">
+          <router-link
+            v-if="previousPage"
+            :to="{ name: 'Resultats', query: { page: previousPage } }"
+            class="mx-3 text-sm font-semibold text-brand-blue-1"
+            >Précédent</router-link
+          >
+          <router-link
+            v-if="nextPage"
+            :to="{ name: 'Resultats', query: { page: nextPage } }"
+            class="mx-3 text-sm font-semibold text-brand-blue-1"
+            >Suivant</router-link
+          >
+        </div>
       </div>
     </div>
   </main>
@@ -45,6 +61,9 @@ export default {
       const nextPage = this.currentPage + 1;
       const maxPage = this.jobs.length / 10;
       return nextPage <= maxPage ? nextPage : undefined;
+    },
+    totalPage() {
+      return this.jobs.length / 10;
     },
     displayedJobs() {
       const pageNumber = this.currentPage;
