@@ -30,8 +30,6 @@ describe("JobListings", () => {
   });
 
   it("fetches jobs", function () {
-    axios.get.mockReturnValue({ data: [] });
-
     const $route = createRoute();
 
     shallowMount(JobListings, createConfig($route));
