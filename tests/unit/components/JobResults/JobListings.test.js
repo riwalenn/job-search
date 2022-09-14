@@ -1,4 +1,4 @@
-import { shallowMount, flushPromises } from "@vue/test-utils";
+import { shallowMount, flushPromises, RouterLinkStub } from "@vue/test-utils";
 import JobListings from "@/components/JobResults/JobListings";
 import axios from "axios";
 
@@ -15,6 +15,9 @@ describe("JobListings", () => {
     global: {
       mocks: {
         $route,
+      },
+      stubs: {
+        "router-link": RouterLinkStub,
       },
     },
   });
