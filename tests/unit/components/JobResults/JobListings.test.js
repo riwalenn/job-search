@@ -5,6 +5,13 @@ import axios from "axios";
 jest.mock("axios");
 
 describe("JobListings", () => {
+  beforeEach(() => {
+    axios.get.mockReturnValue({ data: Array(15).fill({}) });
+  });
+  afterEach(() => {
+    axios.get.mockReset();
+  });
+
   const createRoute = (queryParams = {}) => ({
     query: {
       page: "5",
@@ -32,7 +39,6 @@ describe("JobListings", () => {
   });
 
   it("creates a job listing for a maximum of 10 jobs", async function () {
-    axios.get.mockReturnValue({ data: Array(15).fill({}) });
     const queryParams = { page: "1" };
     const $route = createRoute(queryParams);
     const wrapper = shallowMount(JobListings, createConfig($route));
