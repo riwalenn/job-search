@@ -78,7 +78,8 @@ describe("JobListings", () => {
 
       expect(previousPage.exists()).toBe(false);
     });
-    it("shows link to next page", async function () {
+
+    fit("shows link to next page", async function () {
       const queryParams = { page: "1" };
       const $route = createRoute(queryParams);
       const wrapper = shallowMount(JobListings, createConfig($route));

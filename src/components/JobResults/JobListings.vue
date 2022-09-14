@@ -61,11 +61,11 @@ export default {
     },
     nextPage() {
       const nextPage = this.currentPage + 1;
-      const maxPage = this.jobs.length / 10;
+      const maxPage = Math.ceil(this.jobs.length / 10);
       return nextPage <= maxPage ? nextPage : undefined;
     },
     totalPage() {
-      return this.jobs.length / 10;
+      return Math.ceil(this.jobs.length / 10);
     },
     displayedJobs() {
       const pageNumber = this.currentPage;
