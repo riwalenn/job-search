@@ -69,4 +69,6 @@ beforeCreate() {
 ```
 ajouter Json Server dans le fichier package.json (scripts) : "backend (n'importe quel nom)": "json-server --watch db.json"
 lancer le service npm run backend
+
+ne pas oublier le fichier d'environnement
 ```
