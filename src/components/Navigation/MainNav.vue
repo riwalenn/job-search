@@ -42,9 +42,12 @@
   </header>
 </template>
 <script>
+import { mapState } from "vuex";
+
 import ActionButton from "@/components/Shared/ActionButton";
 import ProfileImage from "@/components/Navigation/ProfileImage";
 import Subnav from "@/components/Navigation/Subnav";
+
 import { LOGIN_USER } from "@/store";
 
 export default {
@@ -72,9 +75,7 @@ export default {
         "h-32": this.isLoggedIn,
       };
     },
-    isLoggedIn() {
-      return this.$store.state.isLoggedIn;
-    },
+    ...mapState(["isLoggedIn"]),
   },
   methods: {
     loginUser() {
