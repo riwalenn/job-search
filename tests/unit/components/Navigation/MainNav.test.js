@@ -1,7 +1,6 @@
-import {RouterLinkStub, shallowMount} from "@vue/test-utils";
-import {createStore} from "vuex";
+import { RouterLinkStub, shallowMount } from "@vue/test-utils";
+import { createStore } from "vuex";
 import MainNav from "@/components/Navigation/MainNav";
-import {comment} from "postcss";
 
 describe("MainNav", () => {
   const createConfig = (store) => ({
