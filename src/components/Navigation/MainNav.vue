@@ -45,6 +45,7 @@
 import ActionButton from "@/components/Shared/ActionButton";
 import ProfileImage from "@/components/Navigation/ProfileImage";
 import Subnav from "@/components/Navigation/Subnav";
+import { LOGIN_USER } from "@/store";
 
 export default {
   name: "MainNav",
@@ -77,7 +78,7 @@ export default {
   },
   methods: {
     loginUser() {
-      this.$store.commit("LOGIN_USER");
+      this.$store.commit(LOGIN_USER);
     },
   },
 };
