@@ -33,7 +33,7 @@
             v-else
             text="Se connecter"
             data-test="login-button"
-            @click="LOGIN_USER"
+            @click="LOGIN_USER()"
           />
         </div>
       </div>
