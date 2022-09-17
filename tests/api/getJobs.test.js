@@ -22,11 +22,9 @@ describe("getJobs", () => {
   it("extracts jobs from response", async function () {
     const data = await getJobs();
 
-    expect(data).toEqual([
-      {
-        id: 1,
-        title: "Java Engineer",
-      },
-    ]);
+    expect(data).toEqual({
+      id: 1,
+      title: "Java Engineer",
+    });
   });
 });
