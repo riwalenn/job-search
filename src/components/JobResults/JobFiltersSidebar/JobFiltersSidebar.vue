@@ -9,17 +9,20 @@
           <action-button text="Effacer les filtres" type="secondary" />
         </div>
       </div>
+      <accordion />
     </section>
   </div>
 </template>
 
 <script>
 import ActionButton from "@/components/Shared/ActionButton";
+import Accordion from "@/components/Shared/Accordion";
 
 export default {
   name: "JobFiltersSidebar",
   components: {
     ActionButton,
+    Accordion,
   },
 };
 </script>
