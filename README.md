@@ -15,6 +15,12 @@ npm run serve
 npm run build
 ```
 
+### Vuex documentation 
+```
+
+[Vuex documentation on dispatching actions with the dispatch Method](https://vuex.vuejs.org/guide/actions.html#dispatching-actions)
+```
+
 ### Run your unit tests
 ```
 npm run test:unit
