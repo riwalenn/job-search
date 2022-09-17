@@ -6,6 +6,12 @@ describe("state", function () {
 
     expect(startingState.isLoggedIn).toBe(false);
   });
+
+  it("stores job listings", function () {
+    const startingState = state();
+
+    expect(startingState.jobs).toEqual([]);
+  });
 });
 
 describe("mutations", function () {
