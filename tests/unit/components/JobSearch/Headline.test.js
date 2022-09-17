@@ -25,8 +25,10 @@ describe("Headline", () => {
 
   it("swaps action verb after first interval", async function () {
     const wrapper = mount(Headline);
+
     jest.runOnlyPendingTimers();
     await nextTick();
+
     const actionPhrase = wrapper.find("[data-test='action-phrase']");
     expect(actionPhrase.text()).toBe("Create for everyone");
   });

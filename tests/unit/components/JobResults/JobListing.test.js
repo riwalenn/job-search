@@ -55,9 +55,7 @@ describe("JobListing", () => {
   });
 
   it("links to individual job's page", function () {
-    const jobProps = createJobProps({
-      id: 15,
-    });
+    const jobProps = createJobProps({ id: 15 });
     const wrapper = mount(JobListing, createConfig(jobProps));
     const jobPageLink = wrapper.findComponent(RouterLinkStub);
     const toProp = jobPageLink.props("to");
