@@ -9,7 +9,7 @@
           <action-button text="Effacer les filtres" type="secondary" />
         </div>
       </div>
-      <accordion />
+      <accordion> Hello, custom content </accordion>
     </section>
   </div>
 </template>
