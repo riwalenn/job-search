@@ -15,6 +15,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "jobs" */ "@/views/JobResultsView"),
   },
+  {
+    path: "/teams",
+    name: "Equipe",
+    component: () => import("@/views/TeamsView"),
+  },
 ];
 
 export default routes;

@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       menuItems: [
-        { text: "Qui sommes-nous ?", url: "/" },
+        { text: "Qui sommes-nous ?", url: "/teams" },
         { text: "Localisations", url: "/" },
         { text: "Nous rejoindre", url: "/" },
         { text: "Etudiants", url: "/" },
