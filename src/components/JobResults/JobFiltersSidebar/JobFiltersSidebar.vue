@@ -10,6 +10,8 @@
         </div>
       </div>
 
+      <accordion header="Diplômes" />
+
       <accordion header="Type de contrat">
         <p>Placeholder pour l'instant</p>
       </accordion>
