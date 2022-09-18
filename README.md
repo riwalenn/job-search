@@ -35,6 +35,7 @@ npm run lint --fix
 ### TailwindCss Plugin
 ```
 Preview of the resulting CSS for classes on hover : ctrl + Q on Windows or F1 on Mac
+Preferences > Editor > General > Code Completion > [X] Show the documentation popup
 ```
 See [Solution on JetBrains](https://youtrack.jetbrains.com/issue/WEB-52736).
 
