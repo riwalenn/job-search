@@ -16,30 +16,7 @@
         <p>Placeholder pour l'instant</p>
       </accordion>
 
-      <accordion header="Entreprises">
-        <div class="mt-5">
-          <fieldset>
-            <ul class="flex flex-row flex-wrap">
-              <li class="w-1/2 h-8">
-                <input id="VueTube" type="checkbox" class="mr-3" />
-                <label for="VueTube">VueTube</label>
-              </li>
-              <li class="w-1/2 h-8">
-                <input id="Between Vue and me" type="checkbox" class="mr-3" />
-                <label for="Between Vue and me">Between Vue</label>
-              </li>
-              <li class="w-1/2 h-8">
-                <input id="Et Vue Brute" type="checkbox" class="mr-3" />
-                <label for="Et Vue Brute">Et Vue Brute</label>
-              </li>
-              <li class="w-1/2 h-8">
-                <input id="Vue and a Half Men" type="checkbox" class="mr-3" />
-                <label for="Vue and a Half Men">Vue and a Half Men</label>
-              </li>
-            </ul>
-          </fieldset>
-        </div>
-      </accordion>
+      <job-filters-sidebar-organizations />
     </section>
   </div>
 </template>
@@ -47,12 +24,14 @@
 <script>
 import ActionButton from "@/components/Shared/ActionButton";
 import Accordion from "@/components/Shared/Accordion";
+import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations";
 
 export default {
   name: "JobFiltersSidebar",
   components: {
     ActionButton,
     Accordion,
+    JobFiltersSidebarOrganizations,
   },
 };
 </script>
