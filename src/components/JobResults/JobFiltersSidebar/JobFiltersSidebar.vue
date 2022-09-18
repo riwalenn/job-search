@@ -9,7 +9,12 @@
           <action-button text="Effacer les filtres" type="secondary" />
         </div>
       </div>
-      <accordion>
+
+      <accordion header="Type de contrat">
+        <p>Placeholder pour l'instant</p>
+      </accordion>
+
+      <accordion header="Entreprises">
         <div class="mt-5">
           <fieldset>
             <ul class="flex flex-row flex-wrap">
