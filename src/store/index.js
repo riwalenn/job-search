@@ -40,9 +40,10 @@ export const actions = {
 };
 
 const store = createStore({
-  state,
-  mutations,
   actions,
+  getters,
+  mutations,
+  state,
   strict: process.env.NODE_ENV !== "production",
 });
 
