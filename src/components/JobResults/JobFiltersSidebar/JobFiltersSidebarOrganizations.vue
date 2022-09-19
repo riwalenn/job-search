@@ -7,6 +7,7 @@
             v-for="organization in UNIQUE_ORGANIZATIONS"
             :key="organization"
             class="w-1/2 h-8"
+            @change="selectedOrganization"
           >
             <input
               :id="organization"
@@ -43,6 +44,11 @@ export default {
   },
   computed: {
     ...mapGetters([UNIQUE_ORGANIZATIONS]),
+  },
+  methods: {
+    selectOrganization() {
+      console.log(this.selectedOrganizations);
+    },
   },
 };
 </script>

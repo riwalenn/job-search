@@ -14,6 +14,11 @@ describe("state", function () {
 
     expect(startingState.jobs).toEqual([]);
   });
+  it("stores organizations that the user would like to filter jobs by", function () {
+    const startingState = state();
+
+    expect(startingState.selectedOrganizations).toEqual([]);
+  });
 });
 
 describe("mutations", function () {
