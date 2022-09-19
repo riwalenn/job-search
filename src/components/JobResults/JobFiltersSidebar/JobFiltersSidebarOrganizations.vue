@@ -32,5 +32,10 @@ export default {
   components: {
     Accordion,
   },
+  computed: {
+    UNIQUE_ORGANIZATIONS() {
+      return this.$store.getters.UNIQUE_ORGANIZATIONS;
+    },
+  },
 };
 </script>
