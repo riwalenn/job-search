@@ -1,13 +1,10 @@
-const axios = require("axios");
-const url = "http://localhost:3000/jobs";
-const fetchJobsV1 = () => {
-  axios.get(url).then((response) => {
-    console.log(response.data);
-  });
-};
+const numbers = new Set();
+numbers.add(5);
+numbers.add(10);
+numbers.add(15);
 
-const fetchJobsV2 = async () => {
-  const response = await axios.get(url);
-  console.log(response);
-};
-fetchJobsV2();
+numbers.add(5);
+numbers.add(15);
+numbers.add(25);
+
+console.log(numbers);
