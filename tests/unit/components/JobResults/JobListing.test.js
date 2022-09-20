@@ -5,7 +5,7 @@ import JobListing from "@/components/JobResults/JobListing.vue";
 describe("JobListing", () => {
   const createJobProps = (jobProps = {}) => ({
     title: "Vue Developer",
-    organization: "AirBnB",
+    organization: "ILABS",
     locations: ["Indianapolis"],
     minimumQualifications: ["Succeed"],
     ...jobProps,
@@ -31,9 +31,9 @@ describe("JobListing", () => {
   });
 
   it("renders job organization", () => {
-    const jobProps = createJobProps({ organization: "AirBnB" });
+    const jobProps = createJobProps({ organization: "ILABS" });
     const wrapper = mount(JobListing, createConfig(jobProps));
-    expect(wrapper.text()).toMatch("AirBnB");
+    expect(wrapper.text()).toMatch("ILABS");
   });
 
   it("renders job locations", () => {

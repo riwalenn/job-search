@@ -16,6 +16,7 @@ describe("getJobs", () => {
 
   it("fetches jobs that candidates can apply to", async function () {
     await getJobs();
+
     expect(axios.get).toHaveBeenCalledWith("http://myfakeapi.com/jobs");
   });
 

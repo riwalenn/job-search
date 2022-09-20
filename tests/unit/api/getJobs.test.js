@@ -22,6 +22,7 @@ describe("getJobs", () => {
 
   it("extracts jobs from response", async () => {
     const data = await getJobs();
+
     expect(data).toEqual([
       {
         id: 1,

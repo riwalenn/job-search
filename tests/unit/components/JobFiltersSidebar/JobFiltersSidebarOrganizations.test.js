@@ -20,9 +20,12 @@ describe("JobFiltersSidebarOrganizations", () => {
       },
     });
     const clickableArea = wrapper.find("[data-test='clickable-area']");
+
     await clickableArea.trigger("click");
+
     const organizationLabels = wrapper.findAll("[data-test='organization']");
     const organizations = organizationLabels.map((node) => node.text());
+
     expect(organizations).toEqual(["Google", "Amazon"]);
   });
 
@@ -46,8 +49,10 @@ describe("JobFiltersSidebarOrganizations", () => {
     });
     const clickableArea = wrapper.find("[data-test='clickable-area']");
     await clickableArea.trigger("click");
+
     const googleInput = wrapper.find("[data-test='Google']");
     await googleInput.setChecked();
+
     expect(commit).toHaveBeenCalledWith("ADD_SELECTED_ORGANIZATIONS", [
       "Google",
     ]);

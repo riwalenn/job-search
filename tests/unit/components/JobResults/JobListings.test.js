@@ -36,6 +36,7 @@ describe("JobListings", () => {
       const $store = createStore({
         dispatch,
       });
+
       shallowMount(JobListings, createConfig($route, $store));
       expect(dispatch).toHaveBeenCalledWith("FETCH_JOBS");
     });
@@ -51,6 +52,7 @@ describe("JobListings", () => {
       },
     });
     const wrapper = shallowMount(JobListings, createConfig($route, $store));
+
     await flushPromises();
     const jobListings = wrapper.findAll("[data-test='job-listing']");
     expect(jobListings).toHaveLength(10);
@@ -62,6 +64,7 @@ describe("JobListings", () => {
       const $route = createRoute(queryParams);
       const $store = createStore();
       const wrapper = shallowMount(JobListings, createConfig($route, $store));
+
       expect(wrapper.text()).toMatch("Page 1");
     });
   });
@@ -72,6 +75,7 @@ describe("JobListings", () => {
       const $route = createRoute(queryParams);
       const $store = createStore();
       const wrapper = shallowMount(JobListings, createConfig($route, $store));
+
       expect(wrapper.text()).toMatch("Page 3");
     });
   });
@@ -83,6 +87,7 @@ describe("JobListings", () => {
       const $store = createStore();
       const wrapper = shallowMount(JobListings, createConfig($route, $store));
       const previousPage = wrapper.find("[data-test='previous-page-link']");
+
       expect(previousPage.exists()).toBe(false);
     });
 
@@ -97,6 +102,7 @@ describe("JobListings", () => {
       const wrapper = shallowMount(JobListings, createConfig($route, $store));
       await flushPromises();
       const nextPage = wrapper.find("[data-test='next-page-link']");
+
       expect(nextPage.exists()).toBe(true);
     });
   });
@@ -111,8 +117,10 @@ describe("JobListings", () => {
         },
       });
       const wrapper = shallowMount(JobListings, createConfig($route, $store));
+
       await flushPromises();
       const nextPage = wrapper.find("[data-test='next-page-link']");
+
       expect(nextPage.exists()).toBe(false);
     });
 
@@ -125,8 +133,10 @@ describe("JobListings", () => {
         },
       });
       const wrapper = shallowMount(JobListings, createConfig($route, $store));
+
       await flushPromises();
       const previousPage = wrapper.find("[data-test='previous-page-link']");
+
       expect(previousPage.exists()).toBe(true);
     });
   });

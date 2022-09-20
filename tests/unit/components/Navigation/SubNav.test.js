@@ -21,7 +21,7 @@ describe("Subnav", () => {
       const routeName = "JobResults";
       const wrapper = mount(Subnav, createConfig(routeName));
       const jobCount = wrapper.find("[data-test='job-count']");
-      expect(jobCount.exists()).toBe(true);
+      expect(jobCount.exists()).toBe(false);
     });
   });
 

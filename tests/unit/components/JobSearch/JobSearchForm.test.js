@@ -30,7 +30,7 @@ describe("JobSearchForm", () => {
       await submitButton.trigger("click");
 
       expect(push).toHaveBeenCalledWith({
-        name: "JobResults",
+        name: "Resultats",
         query: {
           role: "Vue Developer",
           location: "Dallas",
