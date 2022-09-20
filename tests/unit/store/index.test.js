@@ -82,6 +82,26 @@ describe("getters", () => {
         { organization: "Microsoft" },
       ]);
     });
+
+    describe("when the user has not selected any organizations", () => {
+      it("returns all jobs", () => {
+        const state = {
+          jobs: [
+            { organization: "Google" },
+            { organization: "Amazon" },
+            { organization: "Microsoft" },
+          ],
+          selectedOrganizations: [],
+        };
+
+        const filteredJobs = getters.FILTERED_JOBS_BY_ORGANIZATIONS(state);
+        expect(filteredJobs).toEqual([
+          { organization: "Google" },
+          { organization: "Amazon" },
+          { organization: "Microsoft" },
+        ]);
+      });
+    });
   });
 });
 
