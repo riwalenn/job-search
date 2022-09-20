@@ -1,8 +1,6 @@
 import { shallowMount, flushPromises, RouterLinkStub } from "@vue/test-utils";
 import JobListings from "@/components/JobResults/JobListings";
 
-jest.mock("axios");
-
 describe("JobListings", () => {
   const createRoute = (queryParams = {}) => ({
     query: {
@@ -12,8 +10,8 @@ describe("JobListings", () => {
   });
 
   const createStore = (config = {}) => ({
-    state: {
-      jobs: Array(15).fill({}),
+    getters: {
+      FILTER_JOBS_BY_ORGANIZATIONS: [],
     },
     dispatch: jest.fn(),
     ...config,
@@ -47,8 +45,8 @@ describe("JobListings", () => {
     const $route = createRoute(queryParams);
     const numberOfJobsInStore = 15;
     const $store = createStore({
-      state: {
-        jobs: Array(numberOfJobsInStore).fill({}),
+      getters: {
+        FILTERED_JOBS_BY_ORGANIZATIONS: Array(numberOfJobsInStore).fill({}),
       },
     });
     const wrapper = shallowMount(JobListings, createConfig($route, $store));
@@ -95,10 +93,9 @@ describe("JobListings", () => {
     it("shows link to next page", async function () {
       const queryParams = { page: "1" };
       const $route = createRoute(queryParams);
-      const numberOfJobsInStore = 15;
       const $store = createStore({
-        state: {
-          jobs: Array(numberOfJobsInStore).fill({}),
+        getters: {
+          FILTERED_JOBS_BY_ORGANIZATIONS: Array(15).fill({}),
         },
       });
       const wrapper = shallowMount(JobListings, createConfig($route, $store));
@@ -115,10 +112,9 @@ describe("JobListings", () => {
     it("does not show link to next page", async function () {
       const queryParams = { page: "2" };
       const $route = createRoute(queryParams);
-      const numberOfJobsInStore = 15;
       const $store = createStore({
-        state: {
-          jobs: Array(numberOfJobsInStore).fill({}),
+        getters: {
+          FILTERED_JOBS_BY_ORGANIZATIONS: Array(15).fill({}),
         },
       });
       const wrapper = shallowMount(JobListings, createConfig($route, $store));
@@ -133,10 +129,9 @@ describe("JobListings", () => {
     it("shows link to previous page", async function () {
       const queryParams = { page: "2" };
       const $route = createRoute(queryParams);
-      const numberOfJobsInStore = 15;
       const $store = createStore({
-        state: {
-          jobs: Array(numberOfJobsInStore).fill({}),
+        getters: {
+          FILTERED_JOBS_BY_ORGANIZATIONS: Array(15).fill({}),
         },
       });
       const wrapper = shallowMount(JobListings, createConfig($route, $store));

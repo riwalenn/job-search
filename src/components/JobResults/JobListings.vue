@@ -64,7 +64,7 @@ export default {
       return nextPage <= maxPage ? nextPage : undefined;
     },
     totalPage() {
-      return Math.ceil(this.jobs.length / 10);
+      return Math.ceil(this.FILTERED_JOBS_BY_ORGANIZATIONS.length / 10);
     },
     displayedJobs() {
       const pageNumber = this.currentPage;
