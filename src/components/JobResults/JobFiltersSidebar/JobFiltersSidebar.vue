@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import ActionButton from "@/components/Shared/ActionButton";
-import Accordion from "@/components/Shared/Accordion";
-import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations";
+import ActionButton from "@/components/Shared/ActionButton.vue";
+import Accordion from "@/components/Shared/Accordion.vue";
+import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations.vue";
 
 export default {
   name: "JobFiltersSidebar",

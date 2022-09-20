@@ -30,13 +30,14 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 button {
   @apply px-5 py-3 font-medium;
 }
 
 .primary {
-  @apply rounded text-white bg-brand-blue-1 hover:bg-brand-blue-light-1;
+  @apply rounded text-white border-0 bg-brand-blue-1 hover:shadow-blue;
 }
 
 .secondary {

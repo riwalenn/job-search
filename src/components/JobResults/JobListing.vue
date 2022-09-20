@@ -25,7 +25,7 @@
       </div>
       <div class="px-8 py-4">
         <div>
-          <h3 class="mt-1 mb-2">Qualifications :</h3>
+          <h3 class="mt-1 mb-2">Qualifications</h3>
           <div>
             <ul class="pl-8 list-disc">
               <li

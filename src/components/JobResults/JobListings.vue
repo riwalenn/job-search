@@ -10,9 +10,8 @@
     </ol>
     <div class="mt-8 mx-auto">
       <div class="flex flex-row flex-nowrap">
-        <p class="text-sm flex-grow">
-          Page {{ currentPage }} sur {{ totalPage }}
-        </p>
+        <p class="text-sm flex-grow">Page {{ currentPage }}</p>
+
         <div class="flex items-center justify-center">
           <router-link
             v-if="previousPage"
@@ -38,7 +37,7 @@
 import { mapActions, mapGetters } from "vuex";
 
 import { FETCH_JOBS, FILTERED_JOBS_BY_ORGANIZATIONS } from "@/store";
-import JobListing from "@/components/JobResults/JobListing";
+import JobListing from "@/components/JobResults/JobListing.vue";
 
 export default {
   name: "JobListings",
@@ -54,7 +53,7 @@ export default {
     previousPage() {
       const previousPage = this.currentPage - 1;
       const firstPage = 1;
-      return previousPage >= firstPage ? previousPage : undefined;
+      return previousPage >= firstPage ? firstPage : undefined;
     },
     nextPage() {
       const nextPage = this.currentPage + 1;
@@ -62,9 +61,6 @@ export default {
         this.FILTERED_JOBS_BY_ORGANIZATIONS.length / 10
       );
       return nextPage <= maxPage ? nextPage : undefined;
-    },
-    totalPage() {
-      return Math.ceil(this.FILTERED_JOBS_BY_ORGANIZATIONS.length / 10);
     },
     displayedJobs() {
       const pageNumber = this.currentPage;

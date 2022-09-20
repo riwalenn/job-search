@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="mb-16">
     <h1
       data-test="action-phrase"
       class="font-bold -tracking-hero-h1 text-8xl leading- mb-14"
@@ -32,10 +32,7 @@ export default {
   computed: {
     actionClasses() {
       return {
-        build: this.action === "Build",
-        create: this.action === "Create",
-        design: this.action === "Design",
-        code: this.action === "Code",
+        [this.action.toLowerCase()]: true,
       };
     },
   },

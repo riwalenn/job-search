@@ -7,9 +7,8 @@
         <router-link
           :to="{ name: 'Accueil' }"
           class="flex items-center h-full text-xl"
+          >Careers</router-link
         >
-          Careers
-        </router-link>
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
             <li
@@ -21,9 +20,8 @@
               <router-link
                 :to="menuItem.url"
                 class="flex items-center h-full py-2.5"
+                >{{ menuItem.text }}</router-link
               >
-                {{ menuItem.text }}
-              </router-link>
             </li>
           </ul>
         </nav>
@@ -42,11 +40,11 @@
   </header>
 </template>
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapMutations, mapState } from "vuex";
 
-import ActionButton from "@/components/Shared/ActionButton";
-import ProfileImage from "@/components/Navigation/ProfileImage";
-import Subnav from "@/components/Navigation/Subnav";
+import ActionButton from "@/components/Shared/ActionButton.vue";
+import ProfileImage from "@/components/Navigation/ProfileImage.vue";
+import Subnav from "@/components/Navigation/Subnav.vue";
 
 import { LOGIN_USER } from "@/store";
 

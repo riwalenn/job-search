@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createStore } from "vuex";
 
 import getJobs from "@/api/getJobs";
@@ -37,9 +38,8 @@ export const getters = {
     return uniqueOrganizations;
   },
   [FILTERED_JOBS_BY_ORGANIZATIONS](state) {
-    if (state.selectedOrganizations.length === 0) {
-      return state.jobs;
-    }
+    if (state.selectedOrganizations.length === 0) return state.jobs;
+
     return state.jobs.filter((job) =>
       state.selectedOrganizations.includes(job.organization)
     );
@@ -54,10 +54,10 @@ export const actions = {
 };
 
 const store = createStore({
-  actions,
-  getters,
-  mutations,
   state,
+  mutations,
+  getters,
+  actions,
   strict: process.env.NODE_ENV !== "production",
 });
 

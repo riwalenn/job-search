@@ -7,7 +7,6 @@
             v-for="organization in UNIQUE_ORGANIZATIONS"
             :key="organization"
             class="w-1/2 h-8"
-            @change="selectedOrganization"
           >
             <input
               :id="organization"
@@ -15,6 +14,8 @@
               :value="organization"
               type="checkbox"
               class="mr-3"
+              :data-test="organization"
+              @change="selectOrganization"
             />
             <label :for="organization" data-test="organization">{{
               organization
@@ -28,7 +29,8 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-import { ADD_SELECTED_ORGANIZATIONS, UNIQUE_ORGANIZATIONS } from "@/store";
+
+import { UNIQUE_ORGANIZATIONS, ADD_SELECTED_ORGANIZATIONS } from "@/store";
 
 import Accordion from "@/components/Shared/Accordion.vue";
 

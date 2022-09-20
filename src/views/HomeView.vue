@@ -1,14 +1,14 @@
 <template>
-  <hero-section />
+  <hero />
 </template>
 
 <script>
-import HeroSection from "@/components/JobSearch/HeroSection";
+import Hero from "@/components/JobSearch/Hero.vue";
 
 export default {
   name: "HomeView",
   components: {
-    HeroSection,
+    Hero,
   },
 };
 </script>

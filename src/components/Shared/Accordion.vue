@@ -8,9 +8,10 @@
       <h3 class="text-base font-semibold">{{ header }}</h3>
       <font-awesome-icon :icon="caretIcon" />
     </div>
+
     <div v-if="isOpen" class="w-full mt-5">
       <slot>
-        <p>Désolé, il n'y a pas de contenu !</p>
+        <p>Whoops, somebody forgot to populate me!</p>
       </slot>
     </div>
   </div>
@@ -42,5 +43,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

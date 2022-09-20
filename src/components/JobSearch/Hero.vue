@@ -1,14 +1,15 @@
 <template>
   <main class="flex flex-col h-screen">
-    <section class="pt-10 pb-20">
-      <div class="grid grid-col-12">
+    <section class="flex flex-col pt-10 pb-20">
+      <div class="grid grid-cols-12">
         <div class="col-start-1 col-span-1"></div>
         <div class="col-start-2 col-span-5">
           <headline />
           <job-search-form />
         </div>
-        <div class="col-start-7 col-span-5">
+        <div class="col-start-7 col-span-5 self-center justify-self-center">
           <img
+            class="w-80 h-80 object-contain"
             src="https://careers.google.com/jobs/dist/img/assets/hero-03_1x.085e94af78d9906f55c83d558eca4453.png"
             alt=""
           />
@@ -44,12 +45,12 @@
 </template>
 
 <script>
-import Headline from "@/components/JobSearch/Headline";
-import JobSearchForm from "@/components/JobSearch/JobSearchForm";
-import Spotlight from "@/components/JobSearch/Spotlight";
+import Headline from "@/components/JobSearch/Headline.vue";
+import JobSearchForm from "@/components/JobSearch/JobSearchForm.vue";
+import Spotlight from "@/components/JobSearch/Spotlight.vue";
 
 export default {
-  name: "HeroSection",
+  name: "Hero",
   components: {
     Headline,
     JobSearchForm,
