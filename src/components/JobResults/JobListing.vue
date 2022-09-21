@@ -37,11 +37,7 @@
             </ul>
           </div>
         </div>
-        <div class="mt-2 text-center">
-          <router-link :to="jobPageLink" class="text-brand-blue-1"
-            >en voir +</router-link
-          >
-        </div>
+        <span>Ajoutée le {{ job.dateAdded }}</span>
       </div>
     </router-link>
   </li>
