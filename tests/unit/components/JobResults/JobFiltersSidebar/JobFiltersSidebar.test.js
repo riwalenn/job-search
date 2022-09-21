@@ -2,22 +2,24 @@ import { mount } from "@vue/test-utils";
 import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations";
 
 describe("JobFiltersSidebarOrganizations", () => {
+  const createConfig = ($store) => ({
+    global: {
+      mocks: {
+        $store,
+      },
+      stubs: {
+        FontAwesomeIcon: true,
+      },
+    },
+  });
+
   it("renders unique list of organizations for filtering jobs", async function () {
     const $store = {
       getters: {
         UNIQUE_ORGANIZATIONS: new Set(["Google", "Amazon"]),
       },
     };
-    const wrapper = mount(JobFiltersSidebarOrganizations, {
-      global: {
-        mocks: {
-          $store,
-        },
-        stubs: {
-          FontAwesomeIcon: true,
-        },
-      },
-    });
+    const wrapper = mount(JobFiltersSidebarOrganizations, createConfig($store));
     const clickableArea = wrapper.find("[data-test='clickable-area']");
     await clickableArea.trigger("click");
 
@@ -35,16 +37,7 @@ describe("JobFiltersSidebarOrganizations", () => {
       },
       commit,
     };
-    const wrapper = mount(JobFiltersSidebarOrganizations, {
-      global: {
-        mocks: {
-          $store,
-        },
-        stubs: {
-          FontAwesomeIcon: true,
-        },
-      },
-    });
+    const wrapper = mount(JobFiltersSidebarOrganizations, createConfig($store));
     const clickableArea = wrapper.find("[data-test='clickable-area']");
     await clickableArea.trigger("click");
 
