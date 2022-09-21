@@ -48,6 +48,7 @@ export default {
     ...mapMutations([ADD_SELECTED_JOB_TYPES]),
     selectedJobType() {
       this.ADD_SELECTED_JOB_TYPES(this.selectedJobTypes);
+      this.$router.push({ name: "Resultats" });
     },
   },
 };
