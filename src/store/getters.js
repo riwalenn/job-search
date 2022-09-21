@@ -3,6 +3,7 @@ import {
   FILTERED_JOBS_BY_ORGANIZATIONS,
   UNIQUE_JOB_TYPES,
   FILTERED_JOBS_BY_JOB_TYPES,
+  FILTERED_JOBS,
 } from "@/store/constants";
 
 const getters = {
@@ -24,13 +25,21 @@ const getters = {
     return uniqueJobTypes;
   },
   [FILTERED_JOBS_BY_JOB_TYPES](state) {
-    if (state.selectedJobTypes.length === 0) {
-      return state.jobs;
-    }
+    if (state.selectedJobTypes.length === 0) return state.jobs;
 
     return state.jobs.filter((job) =>
       state.selectedJobTypes.includes(job.jobType)
     );
+  },
+  [FILTERED_JOBS](state) {
+    const noSelectedOrganizations = state.selectedOrganizations.length === 0;
+    const noSelectedJobTypes = state.selectedJobTypes.length === 0;
+
+    if (noSelectedOrganizations && noSelectedJobTypes) return state.jobs;
+
+    return state.jobs
+      .filter((job) => state.selectedOrganizations.includes(job.organization))
+      .filter((job) => state.selectedJobTypes.includes(job.type));
   },
 };
 
