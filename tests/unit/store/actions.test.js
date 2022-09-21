@@ -1,5 +1,5 @@
 import getJobs from "@/api/getJobs";
-import { actions } from "@/store/actions";
+import actions from "@/store/actions";
 
 describe("actions", () => {
   describe("FETCH_JOBS", () => {

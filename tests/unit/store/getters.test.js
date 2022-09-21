@@ -1,4 +1,4 @@
-import { getters } from "@/store/getters";
+import getters from "@/store/getters";
 
 describe("getters", () => {
   describe("UNIQUE_ORGANIZATIONS", () => {
@@ -32,6 +32,21 @@ describe("getters", () => {
         { organization: "Google" },
         { organization: "Microsoft" },
       ]);
+    });
+  });
+
+  describe("UNIQUE_JOB_TYPES", () => {
+    it("finds unique job types from list of jobs", () => {
+      const state = {
+        jobs: [
+          { jobType: "Full-time" },
+          { jobType: "Part-time" },
+          { jobType: "Full-time" },
+        ],
+      };
+      const result = getters.UNIQUE_JOB_TYPES(state);
+
+      expect(result).toEqual(new Set(["Full-time", "Part-time"]));
     });
   });
 
