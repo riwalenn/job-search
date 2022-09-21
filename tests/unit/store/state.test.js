@@ -1,4 +1,4 @@
-import { state } from "@/store/state";
+import state from "@/store/state";
 
 describe("state", () => {
   it("keeps track of whether user is logged in", () => {
@@ -17,5 +17,11 @@ describe("state", () => {
     const startingState = state();
 
     expect(startingState.selectedOrganizations).toEqual([]);
+  });
+
+  it("stores job type that the user would like to filter jobs by", () => {
+    const startingState = state();
+
+    expect(startingState.selectedJobTypes).toEqual([]);
   });
 });
