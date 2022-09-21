@@ -35,11 +35,15 @@ const getters = {
     const noSelectedOrganizations = state.selectedOrganizations.length === 0;
     const noSelectedJobTypes = state.selectedJobTypes.length === 0;
 
-    if (noSelectedOrganizations && noSelectedJobTypes) return state.jobs;
-
     return state.jobs
-      .filter((job) => state.selectedOrganizations.includes(job.organization))
-      .filter((job) => state.selectedJobTypes.includes(job.type));
+      .filter((job) => {
+        if (noSelectedOrganizations) return true;
+        return state.selectedOrganizations.includes(job.organization);
+      })
+      .filter((job) => {
+        if (noSelectedJobTypes) return true;
+        return state.selectedJobTypes.includes(job.jobType);
+      });
   },
 };
 
