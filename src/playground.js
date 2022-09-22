@@ -8,7 +8,7 @@ console.log(c.value);
 a.value = 10;
 console.log(c.value);
 
-console.log("computed : ");
+console.log("computed function : ");
 let name = ref("Boris");
 let title = computed(() => name.value + " the Great");
 console.log(title.value);
@@ -26,7 +26,7 @@ console.log(title2.value);
 person.value.name = "Peter";
 console.log(title2.value);
 
-console.log("reactive :");
+console.log("reactive function :");
 const person2 = reactive({
   name: "Boris",
 });
@@ -36,3 +36,14 @@ console.log(title3.value);
 
 person2.name = "Peter";
 console.log(title3.value);
+
+console.log("multiple properties on reactive object :");
+const user = reactive({
+  firstname: "Riwalenn",
+  lastname: "Bas",
+});
+const titre = computed(() => `${user.firstname} ${user.lastname} the Great`);
+console.log(titre.value);
+
+user.firstname = "Peter";
+console.log(titre.value);
