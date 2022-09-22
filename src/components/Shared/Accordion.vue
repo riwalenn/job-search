@@ -23,10 +23,12 @@ export default {
   name: "Accordion",
   setup() {
     const header = ref("Cool title");
+    const isOpen = ref(false);
     const open = () => {
-      header.value = "Awesome title";
+      isOpen.value = !isOpen.value;
     };
-    return { header, open };
+
+    return { header, open, isOpen };
   },
   // props: {
   //   header: {
