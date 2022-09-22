@@ -36,6 +36,9 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import TextInput from "@/components/Shared/TextInput.vue";
 
@@ -45,19 +48,19 @@ export default {
     ActionButton,
     TextInput,
   },
-  data() {
-    return {
-      profession: "",
-      lieu: "",
-    };
-  },
-  methods: {
-    searchForJobs() {
-      this.$router.push({
+  setup() {
+    const router = useRouter();
+    const profession = ref("");
+    const lieu = ref("");
+
+    const searchForJobs = () => {
+      router.push({
         name: "Resultats",
-        query: { role: this.profession, location: this.lieu },
+        query: { role: profession.value, location: lieu.value },
       });
-    },
+    };
+
+    return { profession, lieu, searchForJobs };
   },
 };
 </script>
