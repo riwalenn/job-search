@@ -18,11 +18,15 @@
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "Accordion",
   setup() {
-    const header = "Cool title";
-    return { header };
+    const header = ref("Cool title");
+    const open = () => {
+      header.value = "Awesome title";
+    };
+    return { header, open };
   },
   // props: {
   //   header: {
