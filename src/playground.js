@@ -1,11 +1,25 @@
-// const numbers = [1, 3, 5, 7, 2, 9, 11, 6];
+const { ref, computed } = require("vue");
 
-// console.log(numbers.filter((number) => number > 6));
+// let a = ref(1);
+// let b = ref(2);
+//
+// let c = computed(() => a.value + b.value);
+// console.log(c.value);
+// a.value = 10;
+// console.log(c.value);
 
-const jobs = [
-  { title: "Angular Developer", organization: "Microsoft" },
-  { title: "Programmer", organization: "Google" },
-  { title: "Developer", organization: "Microsoft" },
-];
+// let name = ref("Boris");
+// let title = computed(() => name.value + " the Great");
+// console.log(title.value);
+// name.value = "Peter";
+// console.log(title.value);
 
-console.log(jobs.filter((job) => job.organization === "Microsoft"));
+const person = ref({
+  name: "Boris",
+});
+
+const title = computed(() => person.value.name + " the Great");
+console.log(title.value);
+
+person.value.name = "Peter";
+console.log(title.value);
