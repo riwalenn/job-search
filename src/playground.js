@@ -1,25 +1,38 @@
-const { ref, computed } = require("vue");
+const { ref, reactive, computed } = require("vue");
+console.log("intro to computed : ");
+let a = ref(1);
+let b = ref(2);
 
-// let a = ref(1);
-// let b = ref(2);
-//
-// let c = computed(() => a.value + b.value);
-// console.log(c.value);
-// a.value = 10;
-// console.log(c.value);
+let c = computed(() => a.value + b.value);
+console.log(c.value);
+a.value = 10;
+console.log(c.value);
 
-// let name = ref("Boris");
-// let title = computed(() => name.value + " the Great");
-// console.log(title.value);
-// name.value = "Peter";
-// console.log(title.value);
+console.log("computed : ");
+let name = ref("Boris");
+let title = computed(() => name.value + " the Great");
+console.log(title.value);
+name.value = "Peter";
+console.log(title.value);
 
+console.log("computed with object : ");
 const person = ref({
   name: "Boris",
 });
 
-const title = computed(() => person.value.name + " the Great");
-console.log(title.value);
+const title2 = computed(() => person.value.name + " the Great");
+console.log(title2.value);
 
 person.value.name = "Peter";
-console.log(title.value);
+console.log(title2.value);
+
+console.log("reactive :");
+const person2 = reactive({
+  name: "Boris",
+});
+
+const title3 = computed(() => person2.name + " the Great");
+console.log(title3.value);
+
+person2.name = "Peter";
+console.log(title3.value);
