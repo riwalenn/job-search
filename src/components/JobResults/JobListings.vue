@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import { onMounted } from "vue";
+import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
+import { useRoute } from "vue-router";
+
 import { useFilteredJobs } from "@/store/composables";
-
-import { FETCH_JOBS, FILTERED_JOBS } from "@/store/constants";
-
+import { FETCH_JOBS } from "@/store/constants";
 import JobListing from "@/components/JobResults/JobListing.vue";
 
 export default {
@@ -54,6 +54,28 @@ export default {
     onMounted(fetchJobs);
 
     const filteredJobs = useFilteredJobs();
+    const route = useRoute();
+    const currentPage = computed(() =>
+      Number.parseInt(route.query.page || "1")
+    );
+    const previousPage = computed(() => {
+      const previousPage = currentPage.value - 1;
+      const firstPage = 1;
+      return previousPage >= firstPage ? previousPage : undefined;
+    });
+    const nextPage = computed(() => {
+      const nextPage = currentPage.value + 1;
+      const maxPage = Math.ceil(filteredJobs.value.length / 10);
+      return nextPage <= maxPage ? nextPage : undefined;
+    });
+    const displayedJobs = computed(() => {
+      const pageNumber = currentPage.value;
+      const firstJobIndex = (pageNumber - 1) * 10;
+      const lastJobIndex = pageNumber * 10;
+      return filteredJobs.value.slice(firstJobIndex, lastJobIndex);
+    });
+
+    return { displayedJobs, previousPage, currentPage, nextPage };
   },
 };
 </script>
