@@ -15,7 +15,7 @@
               type="checkbox"
               class="mr-3"
               :data-test="jobType"
-              @change="selectedJobType"
+              @change="selectJobType"
             />
             <label :for="jobType" data-test="job-type">{{ jobType }}</label>
           </li>
