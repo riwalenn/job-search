@@ -1,3 +1,4 @@
+import { ref } from "vue";
 import { shallowMount, flushPromises, RouterLinkStub } from "@vue/test-utils";
 import { useFilteredJobs, useFetchJobsDispatch } from "@/store/composables";
 jest.mock("@/store/composables");
@@ -30,41 +31,26 @@ describe("JobListings", () => {
   });
 
   it("creates a job listing for a maximum of 10 jobs", async () => {
-    const queryParams = { page: "1" };
-    const $route = createRoute(queryParams);
-    const numberOfJobsInStore = 15;
-    const $store = createStore({
-      getters: {
-        FILTERED_JOBS: Array(numberOfJobsInStore).fill({}),
-      },
+    useFilteredJobs.mockReturnValue({ value: Array(15).fill({}) });
+    useCurrentPage.mockReturnValue({ value: 1 });
+    usePreviousAndNextPages.mockReturnValue({
+      previousPage: undefined,
+      nextPage: 2,
     });
-    const wrapper = shallowMount(JobListings, createConfig($route, $store));
+    const wrapper = shallowMount(JobListings, createConfig());
 
     await flushPromises();
     const jobListings = wrapper.findAll("[data-test='job-listing']");
     expect(jobListings).toHaveLength(10);
   });
 
-  describe("when query params exclude page number", () => {
-    it("displays page number 1", () => {
-      const queryParams = { page: undefined };
-      const $route = createRoute(queryParams);
-      const $store = createStore();
-      const wrapper = shallowMount(JobListings, createConfig($route, $store));
+  it("displays page number", () => {
+    useFilteredJobs.mockReturnValue({ value: [] });
+    useCurrentPage.mockReturnValue(ref(5));
+    usePreviousAndNextPages.mockReturnValue({ previousPage: 4, nextPage: 6 });
+    const wrapper = shallowMount(JobListings, createConfig());
 
-      expect(wrapper.text()).toMatch("Page 1");
-    });
-  });
-
-  describe("when query params include page number", () => {
-    it("displays page number", () => {
-      const queryParams = { page: "3" };
-      const $route = createRoute(queryParams);
-      const $store = createStore();
-      const wrapper = shallowMount(JobListings, createConfig($route, $store));
-
-      expect(wrapper.text()).toMatch("Page 3");
-    });
+    expect(wrapper.text()).toMatch("Page 5");
   });
 
   describe("when user is on first page of job results", () => {
