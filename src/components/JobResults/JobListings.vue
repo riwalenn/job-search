@@ -36,6 +36,8 @@
 <script>
 import { onMounted } from "vue";
 import { useStore } from "vuex";
+import { useFilteredJobs } from "@/store/composables";
+
 import { FETCH_JOBS, FILTERED_JOBS } from "@/store/constants";
 
 import JobListing from "@/components/JobResults/JobListing.vue";
@@ -48,7 +50,10 @@ export default {
   setup() {
     const store = useStore();
     const fetchJobs = () => store.dispatch(FETCH_JOBS);
+
     onMounted(fetchJobs);
+
+    const filteredJobs = useFilteredJobs();
   },
 };
 </script>
