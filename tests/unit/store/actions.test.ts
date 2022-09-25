@@ -2,10 +2,12 @@ import actions from "@/store/actions";
 import getJobs from "@/api/getJobs";
 jest.mock("@/api/getJobs");
 
+const getJobsMock = getJobs as jest.Mock;
+
 describe("actions", () => {
   describe("FETCH_JOBS", () => {
     beforeEach(() => {
-      getJobs.mockResolvedValue([{ id: 1, title: "Software Developer" }]);
+      getJobsMock.mockResolvedValue([{ id: 1, title: "Software Developer" }]);
     });
 
     it("makes a request to fetch jobs", async () => {
@@ -15,7 +17,7 @@ describe("actions", () => {
       expect(getJobs).toHaveBeenCalled();
     });
 
-    it("sends message to save receiived jobs in store", async () => {
+    it("sends message to save received jobs in store", async () => {
       const commit = jest.fn();
       const context = { commit };
 
