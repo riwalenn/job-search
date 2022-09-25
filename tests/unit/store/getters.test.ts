@@ -1,4 +1,5 @@
 import getters from "@/store/getters";
+import { createJob, createState } from "./utils";
 
 describe("getters", () => {
   describe("UNIQUE_ORGANIZATIONS", () => {
