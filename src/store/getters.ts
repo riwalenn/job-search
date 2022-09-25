@@ -9,6 +9,11 @@ import {
 import { Job } from "@/api/types";
 import { GlobalState } from "@/store/types";
 
+interface IncludeJobGetters {
+  INCLUDE_JOB_BY_ORGANIZATION: (job: Job) => boolean;
+  INCLUDE_JOB_BY_JOB_TYPE: (job: Job) => boolean;
+}
+
 const getters = {
   [UNIQUE_ORGANIZATIONS](state: GlobalState) {
     const uniqueOrganizations = new Set<string>();
@@ -28,7 +33,7 @@ const getters = {
     if (state.selectedJobTypes.length === 0) return true;
     return state.selectedJobTypes.includes(job.jobType);
   },
-  [FILTERED_JOBS](state: GlobalState, getters) {
+  [FILTERED_JOBS](state: GlobalState, getters: IncludeJobGetters) {
     return state.jobs
       .filter((job) => getters.INCLUDE_JOB_BY_ORGANIZATION(job))
       .filter((job) => getters.INCLUDE_JOB_BY_JOB_TYPE(job));
