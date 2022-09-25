@@ -1,5 +1,6 @@
 import mutations from "@/store/mutations";
 import state from "@/store/state";
+import { Job } from "@/api/types";
 import { GlobalState } from "@/store/types";
 
 describe("mutations", () => {
@@ -16,15 +17,30 @@ describe("mutations", () => {
     });
   });
 
-  // describe("RECEIVE_JOBS", () => {
-  //   it("receives jobs from API response", () => {
-  //     const state = { jobs: [] };
-  //
-  //     mutations.RECEIVE_JOBS(state, ["Job 1", "Job 2"]);
-  //     expect(state).toEqual({ jobs: ["Job 1", "Job 2"] });
-  //   });
-  // });
-  //
+  const createJob = (config: Partial<Job> = {}): Job => ({
+    id: 1,
+    title: "Angular Developer",
+    organization: "Vue and Me",
+    degree: "Master's",
+    jobType: "Intern",
+    locations: ["Lisbon"],
+    minimumQualifications: [],
+    preferredQualifications: [],
+    description: [],
+    dateAdded: "2021-07-04",
+    ...config,
+  });
+
+  describe("RECEIVE_JOBS", () => {
+    it("receives jobs from API response", () => {
+      const startingState = createState({ jobs: [] });
+      const jobOne = createJob();
+      const jobTwo = createJob();
+      mutations.RECEIVE_JOBS(startingState, [jobOne, jobTwo]);
+      expect(startingState.jobs).toEqual([jobOne, jobTwo]);
+    });
+  });
+
   // describe("ADD_SELECTED_ORGANIZATIONS", () => {
   //   it("updates organizations that the user has chosen to filter jobs by", () => {
   //     const state = { selectedOrganizations: [] };
