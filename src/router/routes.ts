@@ -2,23 +2,24 @@ const routes = [
   {
     path: "/",
     name: "Accueil",
-    component: () => import("@/views/HomeView"),
+    component: () => import("@/views/HomeView.vue"),
   },
   {
     path: "/jobs/results/:id",
     name: "ListeEmplois",
-    component: () => import(/* webpackChunkName: "jobs" */ "@/views/JobView"),
+    component: () =>
+      import(/* webpackChunkName: "jobs" */ "@/views/JobView.vue"),
   },
   {
     path: "/jobs/results",
     name: "Resultats",
     component: () =>
-      import(/* webpackChunkName: "jobs" */ "@/views/JobResultsView"),
+      import(/* webpackChunkName: "jobs" */ "@/views/JobResultsView.vue"),
   },
   {
     path: "/teams",
     name: "Equipe",
-    component: () => import("@/views/TeamsView"),
+    component: () => import("@/views/TeamsView.vue"),
   },
 ];
 
