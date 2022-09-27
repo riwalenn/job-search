@@ -29,4 +29,10 @@ describe("state", () => {
 
     expect(startingState.selectedJobTypes).toEqual([]);
   });
+
+  it("stores degrees that the user would like to filter jobs by", function () {
+    const startingState = state();
+
+    expect(startingState.selectedDegrees).toEqual([]);
+  });
 });
