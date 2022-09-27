@@ -13,6 +13,11 @@ describe("state", () => {
     expect(startingState.jobs).toEqual([]);
   });
 
+  it("stores all degrees that jobs may require", function () {
+    const startingState = state();
+    expect(startingState.degrees).toEqual([]);
+  });
+
   it("stores organizations that the user would like to filter jobs by", () => {
     const startingState = state();
 
