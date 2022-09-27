@@ -65,6 +65,28 @@ describe("getters", () => {
     });
   });
 
+  describe("INCLUDE_JOB_BY_DEGREE", () => {
+    describe("when the user has not selected any degrees", () => {
+      it("includes job", function () {
+        const state = createState({ selectedDegrees: [] });
+        const job = createJob({ degree: "Associate" });
+        const includeJob = getters.INCLUDE_JOB_BY_DEGREE(state)(job);
+
+        expect(includeJob).toBe(true);
+      });
+    });
+
+    it("identifies if job is associated with given degrees", function () {
+      const state = createState({
+        selectedDegrees: ["Bachelor's", "Master's"],
+      });
+      const job = createJob({ degree: "Bachelor's" });
+      const includeJob = getters.INCLUDE_JOB_BY_DEGREE(state)(job);
+
+      expect(includeJob).toBe(true);
+    });
+  });
+
   describe("INCLUDE_JOB_BY_JOB_TYPE", () => {
     describe("when the user has not selected any job types", () => {
       it("includes job", function () {
