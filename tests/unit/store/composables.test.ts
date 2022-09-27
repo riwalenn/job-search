@@ -3,6 +3,7 @@ jest.mock("vuex");
 
 import {
   useFetchJobsDispatch,
+  useFetchDegreesDispatch,
   useFilteredJobs,
   useUniqueDegrees,
   useUniqueJobTypes,
@@ -74,6 +75,18 @@ describe("composables", () => {
 
       useFetchJobsDispatch();
       expect(dispatch).toHaveBeenCalledWith("FETCH_JOBS");
+    });
+  });
+
+  describe("useFetchDegreesDispatch", () => {
+    it("sends call to fetch degrees from API", function () {
+      const dispatch = jest.fn();
+      useStoreMock.mockReturnValue({
+        dispatch,
+      });
+
+      useFetchDegreesDispatch();
+      expect(dispatch).toHaveBeenCalledWith("FETCH_DEGREES");
     });
   });
 });
