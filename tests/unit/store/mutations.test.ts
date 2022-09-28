@@ -1,5 +1,6 @@
 import mutations from "@/store/mutations";
 import { createJob, createState, createDegree } from "./utils";
+import state from "@/store/state";
 
 describe("mutations", () => {
   describe("LOGIN_USER", () => {
@@ -59,6 +60,20 @@ describe("mutations", () => {
       mutations.ADD_SELECTED_DEGREES(startingState, ["Master's", "Bachelor's"]);
 
       expect(startingState.selectedDegrees).toEqual(["Master's", "Bachelor's"]);
+    });
+  });
+
+  describe("CLEAR_USER_JOB_FILTER_SELECTIONS", () => {
+    it("removes all job filters that user has chosen", function () {
+      const startingState = createState({
+        selectedOrganizations: ["Random Organization"],
+        selectedJobTypes: ["Random Job Type"],
+        selectedDegrees: ["Random Degree"],
+      });
+      mutations.CLEAR_USER_JOB_FILTER_SELECTIONS(startingState);
+      expect(startingState.selectedOrganizations).toEqual([]);
+      expect(startingState.selectedJobTypes).toEqual([]);
+      expect(startingState.selectedDegrees).toEqual([]);
     });
   });
 });
