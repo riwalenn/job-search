@@ -26,7 +26,7 @@ describe("MainNav", () => {
       },
     };
     const wrapper = shallowMount(MainNav, createConfig($store));
-    expect(wrapper.text()).toMatch("Careers");
+    expect(wrapper.text()).toMatch("Fake Careers project");
   });
 
   it("displays menu items for navigation", () => {

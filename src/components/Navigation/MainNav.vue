@@ -7,7 +7,7 @@
         <router-link
           :to="{ name: 'Accueil' }"
           class="flex items-center h-full text-xl"
-          >Careers</router-link
+          >Fake Careers project</router-link
         >
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">

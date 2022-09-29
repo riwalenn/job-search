@@ -1,4 +1,4 @@
-# careers
+# fake careers project
 
 ## Project setup
 ```
