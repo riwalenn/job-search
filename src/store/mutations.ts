@@ -5,6 +5,7 @@ import {
   ADD_SELECTED_JOB_TYPES,
   ADD_SELECTED_DEGREES,
   RECEIVE_DEGREES,
+  UPDATE_SKILLS_SEARCH_TERM,
   CLEAR_USER_JOB_FILTER_SELECTIONS,
 } from "@/store/constants";
 
@@ -30,10 +31,14 @@ const mutations = {
   [RECEIVE_DEGREES](state: GlobalState, degrees: Degree[]) {
     state.degrees = degrees;
   },
+  [UPDATE_SKILLS_SEARCH_TERM](state: GlobalState, skillsSearchTerm: string) {
+    state.skillsSearchTerm = skillsSearchTerm;
+  },
   [CLEAR_USER_JOB_FILTER_SELECTIONS](state: GlobalState) {
     state.selectedOrganizations = [];
     state.selectedJobTypes = [];
     state.selectedDegrees = [];
+    state.skillsSearchTerm = "";
   },
 };
 

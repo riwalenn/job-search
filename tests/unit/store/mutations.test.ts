@@ -63,17 +63,25 @@ describe("mutations", () => {
     });
   });
 
+  describe("UPDATE_SKILLS_SEARCH_TERM", () => {
+    const startingState = createState({ skillsSearchTerm: "" });
+    mutations.UPDATE_SKILLS_SEARCH_TERM(startingState, "Vue");
+    expect(startingState.skillsSearchTerm).toBe("Vue");
+  });
+
   describe("CLEAR_USER_JOB_FILTER_SELECTIONS", () => {
     it("removes all job filters that user has chosen", function () {
       const startingState = createState({
         selectedOrganizations: ["Random Organization"],
         selectedJobTypes: ["Random Job Type"],
         selectedDegrees: ["Random Degree"],
+        skillsSearchTerm: "Random qualification",
       });
       mutations.CLEAR_USER_JOB_FILTER_SELECTIONS(startingState);
       expect(startingState.selectedOrganizations).toEqual([]);
       expect(startingState.selectedJobTypes).toEqual([]);
       expect(startingState.selectedDegrees).toEqual([]);
+      expect(startingState.skillsSearchTerm).toBe("");
     });
   });
 });
