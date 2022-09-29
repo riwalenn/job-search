@@ -6,6 +6,7 @@ import {
   FILTERED_JOBS,
   UNIQUE_DEGREES,
   INCLUDE_JOB_BY_DEGREE,
+  INCLUDE_JOB_BY_SKILL,
 } from "@/store/constants";
 
 import { Job } from "@/api/types";
@@ -42,6 +43,9 @@ const getters = {
   [INCLUDE_JOB_BY_DEGREE]: (state: GlobalState) => (job: Job) => {
     if (state.selectedDegrees.length === 0) return true;
     return state.selectedDegrees.includes(job.degree);
+  },
+  [INCLUDE_JOB_BY_SKILL]: (state: GlobalState) => (job: Job) => {
+    return job.title.includes(state.skillsSearchTerm);
   },
   [FILTERED_JOBS](state: GlobalState, getters: IncludeJobGetters) {
     return state.jobs

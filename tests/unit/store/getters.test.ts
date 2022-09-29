@@ -109,6 +109,15 @@ describe("getters", () => {
     });
   });
 
+  describe("INCLUDE_JOB_BY_SKILL", () => {
+    it("identifies if job matcher user's skill", function () {
+      const state = createState({ skillsSearchTerm: "Vue" });
+      const job = createJob({ title: "Vue Developer" });
+      const includeJob = getters.INCLUDE_JOB_BY_SKILL(state)(job);
+      expect(includeJob).toBe(true);
+    });
+  });
+
   describe("FILTERED_JOBS", () => {
     it("filters jobs by organization and job type", function () {
       const INCLUDE_JOB_BY_ORGANIZATION = jest.fn().mockReturnValue(true);
