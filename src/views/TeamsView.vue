@@ -6,7 +6,9 @@
 
     <template #subtitle>
       <h2 class="w-full my-4 text-base font-light">
-        It's awesome working here. Why don't you come join us?
+        Ensemble, nous créons un accès à l'information et créons des produits
+        qui améliorent la vie des gens.<br />
+        Souhaitez-vous rejoindre l'équipe de Fake Careers project ?
       </h2>
     </template>
   </header-container>
