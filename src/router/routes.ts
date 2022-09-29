@@ -21,6 +21,11 @@ const routes = [
     name: "Equipe",
     component: () => import("@/views/TeamsView.vue"),
   },
+  {
+    path: "/locations",
+    name: "localisations",
+    component: () => import("@/views/LocationsView.vue"),
+  },
 ];
 
 export default routes;
