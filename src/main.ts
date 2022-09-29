@@ -5,6 +5,7 @@ import {
   faAngleDown,
   faAngleUp,
   faSearch,
+  faCity,
 } from "@fortawesome/free-solid-svg-icons";
 
 import App from "@/App.vue";
@@ -15,6 +16,7 @@ import store, { key } from "@/store";
 library.add(faAngleDown);
 library.add(faAngleUp);
 library.add(faSearch);
+library.add(faCity);
 
 createApp(App)
   .use(store, key)

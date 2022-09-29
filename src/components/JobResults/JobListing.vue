@@ -8,14 +8,19 @@
         <h2 class="mb-2 text-2xl">{{ job.title }}</h2>
         <div class="flex flex-row align-middle">
           <div class="mr-5">
-            <span>{{ job.organization }}</span>
+            <span class="font-semibold text-sm"
+              ><font-awesome-icon
+                :icon="['fas', 'city']"
+                class="ml-4 mr-3 self-center text-brand-gray-4"
+              />{{ job.organization }}</span
+            >
           </div>
           <div>
             <ul>
               <li
                 v-for="location in job.locations"
                 :key="location"
-                class="inline-block mr-5"
+                class="inline-block mr-5 text-sm"
               >
                 {{ location }}
               </li>

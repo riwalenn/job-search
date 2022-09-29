@@ -11,6 +11,7 @@ module.exports = {
         "brand-gray-1": "#dadce0",
         "brand-gray-2": "#f8f9fa",
         "brand-gray-3": "#80868b",
+        "brand-gray-4": "#bdc1c6",
         "brand-blue-1": "#1967d2",
         "brand-blue-2": "#4285f4",
         "brand-blue-light-1": "rgba(25,103,210,0.91)",
