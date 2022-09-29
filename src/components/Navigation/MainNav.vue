@@ -60,7 +60,7 @@ export default defineComponent({
     return {
       menuItems: [
         { text: "Qui sommes-nous ?", url: "/teams" },
-        { text: "Localisations", url: "/" },
+        { text: "Localisations", url: "/locations" },
         { text: "Nous rejoindre", url: "/" },
         { text: "Etudiants", url: "/" },
         { text: "Emplois", url: "/jobs/results" },
