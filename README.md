@@ -55,6 +55,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - https://careers.google.com/jobs/dist/img/assets/hero-04_1x.5377e160fa426c8b388a861f23cc185b.png
 - https://careers.google.com/jobs/dist/img/assets/hero-02_1x.ccad21962c34a5560e19fdee20717428.png
 - https://careers.google.com/jobs/dist/img/assets/hero-01_1x.6edcfb8c57f30c2566faefba9c92ed8b.png
+- https://careers.google.com/jobs/dist/img/assets/hero_1x.8a69262ba100bad42a0e3f7520dc7ab1.png
 
 ### Notes
 ```

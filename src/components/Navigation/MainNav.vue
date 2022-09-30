@@ -61,8 +61,8 @@ export default defineComponent({
       menuItems: [
         { text: "Qui sommes-nous ?", url: "/teams" },
         { text: "Localisations", url: "/locations" },
-        { text: "Nous rejoindre", url: "/" },
-        { text: "Etudiants", url: "/" },
+        { text: "Nous rejoindre", url: "/how-we-hire" },
+        { text: "Etudiants", url: "/students" },
         { text: "Emplois", url: "/jobs/results" },
       ],
     };

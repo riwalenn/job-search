@@ -26,6 +26,16 @@ const routes = [
     name: "localisations",
     component: () => import("@/views/LocationsView.vue"),
   },
+  {
+    path: "/students",
+    name: "etudiants",
+    component: () => import("@/views/StudentsView.vue"),
+  },
+  {
+    path: "/how-we-hire",
+    name: "hire",
+    component: () => import("@/views/HireView.vue"),
+  },
 ];
 
 export default routes;
