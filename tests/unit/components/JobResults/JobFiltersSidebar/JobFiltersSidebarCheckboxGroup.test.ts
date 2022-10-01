@@ -24,7 +24,10 @@ describe("JobFiltersSidebarCheckboxGroup", () => {
     const props = {
       uniqueValues: new Set(["ValueA", "ValueB"]),
     };
-    const wrapper = shallowMount(JobFiltersSidebarCheckboxGroup, createConfig(props));
+    const wrapper = shallowMount(
+      JobFiltersSidebarCheckboxGroup,
+      createConfig(props)
+    );
     const inputLabels = wrapper.findAll("[data-test='value']");
     const inputValues = inputLabels.map((node) => node.text());
 

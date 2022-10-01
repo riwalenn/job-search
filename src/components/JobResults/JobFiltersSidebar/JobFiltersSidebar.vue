@@ -5,9 +5,7 @@
     <section class="pb-5">
       <job-filters-sidebar-prompt />
 
-      <accordion header="Compétences et qualifications">
-        <job-filters-sidebar-skills />
-      </accordion>
+      <job-filters-sidebar-skills />
 
       <accordion header="Diplômes">
         <job-filters-sidebar-degrees />
