@@ -21,4 +21,21 @@ describe("JobFiltersSidebarSkills", () => {
 
     expect(inputElement.value).toBe("Programmer");
   });
+
+  it("tells store that the user has entered skills search term", async function () {
+    const commit = jest.fn();
+    useStoreMock.mockReturnValue({
+      state: {
+        skillsSearchTerm: "Programmer",
+      },
+      commit,
+    });
+    const wrapper = shallowMount(JobFiltersSidebarSkills);
+    const skillsSearchInput = wrapper.find("[data-test='skills-search-input']");
+    await skillsSearchInput.setValue("Vue Developer");
+    expect(commit).toHaveBeenCalledWith(
+      "UPDATE_SKILLS_SEARCH_TERM",
+      "Vue Developer"
+    );
+  });
 });
